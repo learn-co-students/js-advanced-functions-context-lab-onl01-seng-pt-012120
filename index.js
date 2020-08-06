@@ -46,9 +46,10 @@ let createTimeOutEvent = function(dateTime) {
 }
 
 let hoursWorkedOnDate = function(date) {
-  const timeIn = this.timeInEvents.find((e) => e.date === date ).hour
-  const timeOut = this.timeOutEvents.find((e) => e.date === date ).hour
-  return (timeOut - timeIn)/100
+  const dateMatch = (timeEvent) => timeEvent.date === date;
+  let timeIn = this.timeInEvents.find(dateMatch);
+  let timeOut = this.timeOutEvents.find(dateMatch);
+  return (timeOut.hour - timeIn.hour) / 100;
 }
 
 let wagesEarnedOnDate = function(date) {
