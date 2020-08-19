@@ -86,12 +86,3 @@ const findEmployeeByFirstName = function(srcArray,firstName){
         };
     });
 };
-
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-
-const calculatePayroll = function(arrEmp){
-    let allWages = arrEmp.map(emp=>{
-        return allWagesFor.call(emp);
-    });
-    return allWages.reduce(reducer);
-};

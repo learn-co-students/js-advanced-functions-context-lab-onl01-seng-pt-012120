@@ -90,8 +90,8 @@ const findEmployeeByFirstName = function(srcArray,firstName){
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 const calculatePayroll = function(arrEmp){
-    let allWages = arrEmp.map(emp=>{
-        return allWagesFor.call(emp);
+    let allWages = arrEmp.map(emn=>{
+        return allWagesFor(emp);
     });
     return allWages.reduce(reducer);
 };

@@ -60,7 +60,7 @@ function createTimeOutEvent(eventDate) {
     return this;
 };
 
-function hoursWorkedOnDate(date){
+const hoursWorkedOnDate = (date) => {
     let hourStart = this.timeInEvents.find(event => {
         if (event.date === date) {
             return event;
@@ -71,27 +71,6 @@ function hoursWorkedOnDate(date){
             return event;
         }
     });
+    debugger;
     return (hourFinish.hour / 100 - hourStart.hour / 100);
-};
-
-function wagesEarnedOnDate(clockDate){
-    let wages = hoursWorkedOnDate.call(this,clockDate) * this.payPerHour;
-    return wages;
-};
-
-const findEmployeeByFirstName = function(srcArray,firstName){
-    return srcArray.find(emp=>{
-        if (emp.firstName === firstName) {
-            return emp;
-        };
-    });
-};
-
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-
-const calculatePayroll = function(arrEmp){
-    let allWages = arrEmp.map(emp=>{
-        return allWagesFor.call(emp);
-    });
-    return allWages.reduce(reducer);
 };
