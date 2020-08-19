@@ -75,23 +75,6 @@ function hoursWorkedOnDate(date){
 };
 
 function wagesEarnedOnDate(clockDate){
-    let wages = hoursWorkedOnDate.call(this,clockDate) * this.payPerHour;
+    let wages = this.hoursWorkedOnDate(clockDate) * this.payPerHour;
     return wages;
-};
-
-const findEmployeeByFirstName = function(srcArray,firstName){
-    return srcArray.find(emp=>{
-        if (emp.firstName === firstName) {
-            return emp;
-        };
-    });
-};
-
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
-
-const calculatePayroll = function(arrEmp){
-    let allWages = arrEmp.map(emp=>{
-        return allWagesFor.call(emp);
-    });
-    return allWages.reduce(reducer);
 };

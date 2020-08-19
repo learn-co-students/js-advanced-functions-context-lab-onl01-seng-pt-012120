@@ -91,7 +91,8 @@ const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 const calculatePayroll = function(arrEmp){
     let allWages = arrEmp.map(emp=>{
-        return allWagesFor.call(emp);
+        debugger;
+        return allWagesFor(emp);
     });
     return allWages.reduce(reducer);
 };
